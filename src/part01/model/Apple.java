@@ -34,4 +34,13 @@ public class Apple {
     public void setName(String name) {
         this.name = name;
     }
+
+    public Apple(int wight, String color, String name) {
+        this.wight = wight;
+        this.color = color;
+        this.name = name;
+    }
+
+    public Apple() {
+    }
 }
