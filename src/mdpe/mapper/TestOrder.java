@@ -37,9 +37,6 @@ public class TestOrder {
 
         ModelMapper modelMapper = new ModelMapper();
 
-        modelMapper.addMappings((order1, orderDTO) -> {
-
-        });
 
         OrderDTO orderDTO = modelMapper.map(order, OrderDTO.class);
 
