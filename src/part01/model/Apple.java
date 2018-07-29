@@ -37,6 +37,7 @@ public class Apple {
         this.name = name;
     }
 
+
     @Override
     public String toString() {
         return "Apple{" +
@@ -53,5 +54,14 @@ public class Apple {
 
     public void setPrice(Integer price) {
         this.price = price;
+    }
+    public Apple(int wight, String color, String name) {
+        this.wight = wight;
+        this.color = color;
+        this.name = name;
+    }
+
+    public Apple() {
+
     }
 }
