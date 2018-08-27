@@ -11,6 +11,8 @@ public class Apple {
 
     private String name;
 
+    private Integer price;
+
     public int getWight() {
         return wight;
     }
@@ -35,6 +37,24 @@ public class Apple {
         this.name = name;
     }
 
+
+    @Override
+    public String toString() {
+        return "Apple{" +
+                "wight=" + wight +
+                ", color='" + color + '\'' +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                '}';
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
     public Apple(int wight, String color, String name) {
         this.wight = wight;
         this.color = color;
@@ -42,5 +62,6 @@ public class Apple {
     }
 
     public Apple() {
+
     }
 }
