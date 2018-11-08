@@ -13,13 +13,13 @@ public class StreamTest06 {
 
     public static void main(String[] args) {
 
-//        test02();
-        test04();
+        test01();
     }
 
     public static void test01(){
         IntStream intStream = Part2Util.getDishList().stream().mapToInt(Dish::getCalories);
-        System.out.println(intStream.average());
+        Stream<Integer> stream = intStream.boxed();
+
     }
 
     public static void test02(){
