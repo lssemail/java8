@@ -18,9 +18,9 @@ public class StreamTest02 {
     public static void main(String[] args) {
 //        test01();
 //        test04();
-//        test05();
+        test05();
 //          test06();
-        test07();
+//        test07();
     }
 
     public static void test01(){

@@ -1,6 +1,5 @@
 package part02.chapt06;
 
-import com.sun.corba.se.spi.orb.Operation;
 import part02.Dish;
 import part02.Part2Util;
 
@@ -45,7 +44,7 @@ public class StreamCollect01 {
         Map<CaloricLevel, List<Dish>> dishesByType =
             dishList.stream().collect(groupingBy(dish ->{
                 if(dish.getCalories() <= 400){
-                    return CaloricLevel.DIEF;
+                    return CaloricLevel.DEAF;
                 }else if(dish.getCalories() <= 700){
                     return CaloricLevel.NORMAL;
                 }else {
@@ -60,7 +59,7 @@ public class StreamCollect01 {
         Map<Dish.Type, Map<CaloricLevel, List<Dish>>> dishesByType =
             dishList.stream().collect(groupingBy(Dish::getType, groupingBy(dish ->{
                 if(dish.getCalories() <= 400){
-                    return CaloricLevel.DIEF;
+                    return CaloricLevel.DEAF;
                 }else if(dish.getCalories() <= 700){
                     return CaloricLevel.NORMAL;
                 }else {
@@ -85,5 +84,5 @@ public class StreamCollect01 {
     }
 
 
-    public enum CaloricLevel{DIEF, NORMAL, FAT}
+    public enum CaloricLevel{DEAF, NORMAL, FAT}
 }

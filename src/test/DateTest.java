@@ -11,9 +11,14 @@ public class DateTest {
 
     public static void main(String[] args) {
 
-        System.out.println(0.55*100);
-        System.out.println(0.55*10*10);
+        List<Double> list = Arrays.asList(0.4, 0.45, 0.56, 0.32, 0.1);
+        Optional<Double> min = list.stream().collect(Collectors.minBy(Comparator.comparingDouble(Double::doubleValue)));
+        double avg = list.stream().filter(item -> item > min.get()).collect(Collectors.averagingDouble(Double::doubleValue));
+        System.out.println(avg);
+
     }
+
+
 
 
 
