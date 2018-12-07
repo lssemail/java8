@@ -1,5 +1,7 @@
 package part03.chapt12;
 
+import jodd.util.ClassLoaderUtil;
+
 import java.time.LocalDate;
 import java.time.temporal.ChronoField;
 
@@ -19,5 +21,7 @@ public class Test01 {
         System.out.println(LocalDate.now());
 
         System.out.println(date.get(ChronoField.YEAR));
+
+        System.out.println(1.4f != 1.4f);
     }
 }

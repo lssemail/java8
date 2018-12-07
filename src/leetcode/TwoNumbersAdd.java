@@ -24,7 +24,7 @@ public class TwoNumbersAdd {
         b2.next = b3;
 
         ListNode r = addTwoNumbers(a1, b1);
-        System.out.println(r);
+        System.out.println(r.val);
 
     }
 
