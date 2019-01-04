@@ -1,11 +1,6 @@
 package leetcode;
 
-import test.FastJSONTest;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 回文数
@@ -13,7 +8,7 @@ import java.util.Map;
 public class PalindromeNumber {
 
     public static void main(String[] args) {
-        System.out.println(isValid("(]"));
+        System.out.println(isValid("}"));
     }
 
     /**
@@ -23,39 +18,26 @@ public class PalindromeNumber {
      */
     public static boolean isValid(String s) {
 
-        if(s.equals("")){
-            return true;
-        }
-        String[] arr = s.split("");
-        Map<String, Integer> map = new HashMap<>();
-        map.put("(", 1);
-        map.put(")", 1);
-        map.put("{", 2);
-        map.put("}", 2);
-        map.put("[", 3);
-        map.put("]", 3);
-        int length = arr.length;
-        if(length % 2 == 1){
-            return false;
-        }
-        boolean result = true;
-        for (int i = 0; i< length /2; i++){
-            if(!(map.get(arr[i]).equals(map.get(arr[length -1 - i])))){
-                result = false;
-                break;
-            }
-        }
-        if(!result){
-            for (int i = 0; i<= length / 2; i+=2){
-                if(!(map.get(arr[i]).equals(map.get(arr[i + 1])))){
-                    break;
-                }else {
-                    result = true;
+        Map<Character, Character> mapping = new HashMap<>();
+        mapping.put('{', '}');
+        mapping.put('[', ']');
+        mapping.put('(', ')');
+
+
+        Stack<Character> stack = new Stack<>();
+        for (int i=0; i< s.length(); i++){
+            char c = s.charAt(i);
+            if(mapping.containsKey(c)){
+                stack.push(c);
+                continue;
+            }else {
+                char topElement =  stack.isEmpty() ? '#' : stack.pop();
+                if(topElement == '#' || mapping.get(topElement) != c){
+                    return false;
                 }
             }
-
         }
-        return result;
+        return stack.isEmpty();
     }
 
 

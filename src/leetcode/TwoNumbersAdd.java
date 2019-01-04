@@ -55,12 +55,3 @@ public class TwoNumbersAdd {
         return result;
     }
 }
-
-class ListNode{
-
-    int val;
-    ListNode next;
-    ListNode(int val){
-        this.val = val;
-    }
-}
